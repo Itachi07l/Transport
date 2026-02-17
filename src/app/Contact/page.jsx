@@ -27,6 +27,7 @@ const Page = () => {
       pillColor="#ffffff"
       hoveredPillTextColor="#ffffff"
       pillTextColor="#000000"
+      onMobileMenuClick={() => console.log('Mobile menu clicked')}
       initialLoadAnimation={false}
     />
     <Nav/>
