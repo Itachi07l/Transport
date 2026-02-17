@@ -1,8 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+interface PinContainerProps {
+  children: ReactNode;
+  title?: string;
+  href?: string;
+  className?: string;
+  containerClassName?: string;
+}
+
+interface PinPerspectiveProps {
+  title?: string;
+  href?: string;
+}
 
 export const PinContainer = ({
   children,
@@ -10,7 +22,7 @@ export const PinContainer = ({
   href,
   className,
   containerClassName
-}) => {
+}: PinContainerProps) => {
   const [transform, setTransform] = useState("translate(-50%,-50%) rotateX(0deg)");
 
   const onMouseEnter = () => {
@@ -45,10 +57,9 @@ export const PinContainer = ({
   );
 };
 
-export const PinPerspective = ({title,href}) => {
+export const PinPerspective = ({title,href}: PinPerspectiveProps) => {
   return (
-    <motion.div
-      className="pointer-events-none  w-96 h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <div className="pointer-events-none  w-96 h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="absolute top-0 inset-x-0  flex justify-center">
           <a href={href} target={"_blank"}className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
@@ -135,6 +146,6 @@ export const PinPerspective = ({title,href}) => {
             className="absolute right-1/2 translate-x-[0.5px] bottom-1/2 bg-cyan-300 translate-y-[14px] w-[2px] h-[2px] rounded-full z-40 " />
         </>
       </div>
-    </motion.div>
+    </div>
   );
 };
