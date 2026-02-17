@@ -238,7 +238,6 @@ export default function Home() {
   pillColor="#ffffff"
   hoveredPillTextColor="#ffffff"
   pillTextColor="#000000"
-  theme="light"
   initialLoadAnimation={false}
 />
 			<Nav />
