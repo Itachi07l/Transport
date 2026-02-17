@@ -27,7 +27,6 @@ const Page = () => {
       pillColor="#ffffff"
       hoveredPillTextColor="#ffffff"
       pillTextColor="#000000"
-      theme="light"
       initialLoadAnimation={false}
     />
     <Nav/>
