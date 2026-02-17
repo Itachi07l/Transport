@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
-
 function PixelTransition({
   firstContent,
   secondContent,
@@ -16,11 +15,26 @@ function PixelTransition({
   const pixelGridRef = useRef(null);
   const activeRef = useRef(null);
   const delayedCallRef = useRef(null);
-
+  
   const [isActive, setIsActive] = useState(false);
+  
+  
+  // const isTouchDevice =
+  //    'ontouchstart' in window ||
+  // navigator.maxTouchPoints > 0 ||
+  // window.matchMedia('(pointer: coarse)').matches;
 
-  const isTouchDevice =
-    'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches;
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  useEffect(() => {
+  if (typeof window === 'undefined') return;
+
+  const touch =
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    window.matchMedia('(pointer: coarse)').matches;
+
+  setIsTouchDevice(touch);
+}, []);
 
   useEffect(() => {
     const pixelGridEl = pixelGridRef.current;
@@ -116,12 +130,11 @@ function PixelTransition({
         relative
         overflow-hidden
       `}
-      style={style}
-      onMouseEnter={!isTouchDevice ? handleEnter : undefined}
-      onMouseLeave={!isTouchDevice ? handleLeave : undefined}
-      onClick={isTouchDevice ? handleClick : undefined}
-      onFocus={!isTouchDevice ? handleEnter : undefined}
-      onBlur={!isTouchDevice ? handleLeave : undefined}
+      style={style}onMouseEnter={!isTouchDevice ? handleEnter : undefined}
+onMouseLeave={!isTouchDevice ? handleLeave : undefined}
+onClick={isTouchDevice ? handleClick : undefined}
+onFocus={!isTouchDevice ? handleEnter : undefined}
+onBlur={!isTouchDevice ? handleLeave : undefined}
       tabIndex={0}
     >
       <div style={{ paddingTop: aspectRatio }} />
