@@ -5,11 +5,31 @@ import DottedMap from "dotted-map";
 
 import { useTheme } from "next-themes";
 
+interface LatLng {
+  lat: number;
+  lng: number;
+}
+
+interface Dot {
+  start: LatLng;
+  end: LatLng;
+}
+
+interface WorldMapProps {
+  dots?: Dot[];
+  lineColor?: string;
+}
+
+interface Point {
+  x: number;
+  y: number;
+}
+
 export default function WorldMap({
   dots = [],
   lineColor = "#0ea5e9"
-}) {
-  const svgRef = useRef(null);
+}: WorldMapProps) {
+const svgRef = useRef<SVGSVGElement | null>(null);
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
   const { theme } = useTheme();
@@ -21,20 +41,18 @@ export default function WorldMap({
     backgroundColor: theme === "dark" ? "black" : "white",
   });
 
-  const projectPoint = (lat, lng) => {
-    const x = (lng + 180) * (800 / 360);
-    const y = (90 - lat) * (400 / 180);
-    return { x, y };
-  };
 
-  const createCurvedPath = (
-    start,
-    end
-  ) => {
-    const midX = (start.x + end.x) / 2;
-    const midY = Math.min(start.y, end.y) - 50;
-    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
-  };
+  const projectPoint = (lat: number, lng: number): Point => {
+  const x = (lng + 180) * (800 / 360);
+  const y = (90 - lat) * (400 / 180);
+  return { x, y };
+};
+
+const createCurvedPath = (start: Point, end: Point): string => {
+  const midX = (start.x + end.x) / 2;
+  const midY = Math.min(start.y, end.y) - 50;
+  return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
+};
 
   return (
     <div
