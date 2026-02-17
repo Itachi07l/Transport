@@ -7,7 +7,7 @@ import { Skiper19 } from "@/components/ui/skiper-ui/skiper19";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import Nav from '../components/Nav';
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { MacbookScroll } from "@/components/macbook-scroll";
+// import { MacbookScroll } from "@/components/macbook-scroll";
 import Footer from "@/components/Footer";
 import { PinContainer } from "@/components/3d-pin";
 import { motion } from "framer-motion";
