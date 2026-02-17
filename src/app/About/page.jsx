@@ -426,9 +426,8 @@ const Page = () => {
               </ScrambledText>
             </h3>
 
-            <p className="text-gray-600 leading-relaxed mb-6">
               <ScrambledText
-                className="font-mono  font-stretch-extra-expanded tracking-wide  "
+                className="font-mono  font-stretch-extra-expanded tracking-wide text-gray-600 leading-relaxed mb-6 "
                 radius={100}
                 duration={1.2}
                 speed={0.5}
@@ -440,7 +439,6 @@ const Page = () => {
               </ScrambledText>
               <br />
               lorm ipsum dolor sit amet adipisicing eiusmod tempor elementum ut labore
-            </p>
 
             <button className="group flex items-center gap-2 text-sm font-medium text-gray-900">
               <span className="transition-transform group-hover:translate-x-1">
@@ -464,10 +462,9 @@ const Page = () => {
               Our Vision
             </h3>
 
-            <p className="text-gray-600 leading-relaxed mb-6">
 
               <ScrambledText
-                className="font-mono  font-stretch-extra-expanded tracking-wide "
+                className="font-mono  font-stretch-extra-expanded tracking-wide text-gray-600 leading-relaxed mb-6 "
                 radius={100}
                 duration={1.2}
                 speed={0.5}
@@ -479,7 +476,6 @@ const Page = () => {
               </ScrambledText>
               <br />
               lorm ipsum dolor sit amet adipisicing eiusmod tempor elementum ut labore
-            </p>
 
             <button className="group flex items-center gap-2 text-sm font-medium text-gray-900">
               <span className="transition-transform group-hover:translate-x-1">
@@ -689,9 +685,8 @@ const Page = () => {
               </ScrambledText>
             </h1>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-6 transition-colors hover:text-gray-900">
               <ScrambledText
-                className="font-mono  font-stretch-extra-expanded tracking-wide  pt-4 pl-4"
+                className="font-mono  font-stretch-extra-expanded tracking-wide  pt-4 pl-4 text-gray-600 text-lg leading-relaxed mb-6 transition-colors hover:text-gray-900"
                 radius={100}
                 duration={1.2}
                 speed={0.5}
@@ -700,11 +695,9 @@ const Page = () => {
                 Sit amet adipisicing eiusmod tempor elementum ut labore et dolore
                 magna aliqua ad minim veniam, quis nostrud exercitation.
               </ScrambledText>
-            </p>
 
-            <p className="text-gray-500 leading-relaxed mb-10 transition-colors hover:text-gray-800">
               <ScrambledText
-                className="font-mono  font-stretch-extra-expanded tracking-wide  pt-4 pl-4"
+                className="font-mono  font-stretch-extra-expanded tracking-wide  pt-4 pl-4 text-gray-500 leading-relaxed mb-10 transition-colors hover:text-gray-800"
                 radius={100}
                 duration={1.2}
                 speed={0.5}
@@ -716,7 +709,6 @@ const Page = () => {
                 exercitation. Lorem ipsum dolor sit amet adipisicing eiusmod tempor
                 elementum ut labore et dolore.
               </ScrambledText>
-            </p>
 
             {/* CTA Button */}
             <motion.button
